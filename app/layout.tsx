@@ -1,12 +1,21 @@
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignIn,
+} from "@clerk/nextjs";
+import NavBar from "@/components/NavBar";
+import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import { Sign } from "crypto";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -24,12 +33,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body>
+          <SignedIn>
+          <NavBar/>
+            {children}
+          </SignedIn>
+
+          {/* Content visible only when the user is signed out */}
+          <SignedOut>
+            <NavBar/>
+            <SignIn/>
+          </SignedOut>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
