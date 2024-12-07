@@ -20,7 +20,7 @@ function NavBar() {
         {/* Navigation Links */}
         <div className='flex gap-5 ml-10 flex-1 font-serif text-xl'>
           <Link
-            href="/"
+            href="layout"
             className="text-white font-bold rounded-full px-3 py-2 cursor-pointer hover:bg-blue-700 hover:text-white transition duration-300 transform hover:-translate-y-1"
           >
             Home
@@ -60,9 +60,16 @@ function NavBar() {
         {/* Conditional Rendering for Authentication */}
         <div className='flex items-center'>
           {!userId ? (
-            
+             <Link href="/sign-in">
+             <button className="w-[50px] h-[30px] bg-red-500 text-white font-bold rounded hover:bg-red-600">
+               Sign In
+             </button>
+           </Link>
           ) : (
-            <UserButton afterSignOutUrl="/" />
+            <div className='w-[40px] h-[40px]'>
+
+            <UserButton />
+            </div>
           )}
         </div>
     </div>
