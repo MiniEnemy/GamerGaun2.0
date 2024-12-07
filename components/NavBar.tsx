@@ -1,12 +1,13 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { UserButton, useUser } from "@clerk/nextjs"
+import { SignInButton, UserButton, useAuth } from "@clerk/nextjs"
 
 function NavBar() {
-  const {user}=useUser();
-  return  user&&(
-    <div className='flex items-center'>
+  const { userId } = useAuth();
+  
+  return(
+    <div className='flex items-center justify-between'>
         <Image 
           src='/logo2.png'
           alt='logo'
@@ -55,7 +56,15 @@ function NavBar() {
             Terms & Conditions
           </Link>
         </div>
-        <UserButton />
+
+        {/* Conditional Rendering for Authentication */}
+        <div className='flex items-center'>
+          {!userId ? (
+            
+          ) : (
+            <UserButton afterSignOutUrl="/" />
+          )}
+        </div>
     </div>
   )
 }
