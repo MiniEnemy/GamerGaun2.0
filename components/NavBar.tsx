@@ -1,9 +1,11 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { UserButton } from "@clerk/nextjs"
+import { UserButton, useUser } from "@clerk/nextjs"
 
 function NavBar() {
-  return (
+  const {user}=useUser();
+  return  user&&(
     <div className='flex items-center'>
         <Image 
           src='/logo2.png'
