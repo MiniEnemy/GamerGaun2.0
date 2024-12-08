@@ -13,7 +13,7 @@ export default function page(){
         className="absolute inset-0 h-full w-full object-cover opacity-80"
       />
 
-      <div className="hidden lg:relative lg:block lg:p-12">
+      <div className="hidden lg:relative lg:block lg:mb-">
         <a className="block text-white" href="#">
           <span className="sr-only">Home</span>
           <svg
@@ -30,12 +30,11 @@ export default function page(){
         </a>
 
         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-          Welcome to Squid 🦑
+          Welcome to GamerGaun
         </h2>
 
         <p className="mt-4 leading-relaxed text-white/90">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-          quibusdam aperiam voluptatum.
+        Your ultimate destination for high-quality gaming accessories
         </p>
       </div>
     </section>

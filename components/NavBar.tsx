@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { SignInButton, UserButton, useAuth } from "@clerk/nextjs"
+import { LogIn } from 'lucide-react';
 
 function NavBar() {
   const { userId } = useAuth();
@@ -20,7 +21,7 @@ function NavBar() {
         {/* Navigation Links */}
         <div className='flex gap-5 ml-10 flex-1 font-serif text-xl'>
           <Link
-            href="layout"
+            href="http://localhost:3000"
             className="text-white font-bold rounded-full px-3 py-2 cursor-pointer hover:bg-blue-700 hover:text-white transition duration-300 transform hover:-translate-y-1"
           >
             Home
@@ -61,8 +62,10 @@ function NavBar() {
         <div className='flex items-center'>
           {!userId ? (
              <Link href="/sign-in">
-             <button className="w-[50px] h-[30px] bg-red-500 text-white font-bold rounded hover:bg-red-600">
-               Sign In
+             <button className="w-[50px] h-[30px] text-white ">
+             <div>
+      <LogIn size={24} color="white" />
+    </div>
              </button>
            </Link>
           ) : (

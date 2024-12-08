@@ -13,6 +13,7 @@ import {
   ChevronLeft, 
   ChevronRight 
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const ProductDetail = () => {
   const params = useParams();
@@ -152,12 +153,7 @@ const ProductDetail = () => {
             <p className="text-xl text-gray-400">
               Brand: <span className="text-white">{product.brand}</span>
             </p>
-            <div className="flex items-center text-yellow-500 space-x-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} size={20} fill="currentColor" />
-              ))}
-              <span className="text-sm text-gray-400 ml-2">(120 reviews)</span>
-            </div>
+         
           </div>
 
           <p className="text-4xl font-bold text-green-400">₹{product.price}</p>
@@ -213,5 +209,6 @@ const FeatureCard = ({ icon, label }) => (
     <p className="text-sm text-gray-400 mt-2">{label}</p>
   </div>
 );
+<Footer/>
 
 export default ProductDetail;

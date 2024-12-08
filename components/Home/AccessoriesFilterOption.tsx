@@ -39,7 +39,7 @@ const AccessoriesFilterOption = ({
           defaultValue=""
           onChange={(e) => setFilters({ brand: e.target.value, price: '' })}
         >
-          <option value="">All Accessories</option>
+          <option value="">All Brands</option>
           {brandList.map((brand: string, index: number) => (
             <option key={index} value={brand}>
               {brand}

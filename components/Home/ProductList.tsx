@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import ProductDetail from './Product-Detail';
+import ProductDetail from '../../app/Product-Detail/[product-id]/page';
 function ProductList({ products, showLimited }: { products: any[], showLimited: boolean }) {
   const displayProducts = showLimited ? products.slice(0, 6) : products;
 

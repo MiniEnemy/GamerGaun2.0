@@ -13,7 +13,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Hero from "@/components/Home/Hero";
 import ProductCard from "@/components/Home/ProductCard";
-
+import Footer from "@/components/Footer";
 // Custom font definitions
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,11 +38,13 @@ export default function RootLayout({
         <body suppressHydrationWarning className="relative">
           <SignedOut>
             <NavBar />
-          <main>{children}</main>
+            <main>{children}</main>
+          <Footer/>
           </SignedOut>
           <SignedIn>
             <NavBar />
             <main>{children}</main>
+            <Footer/> 
           </SignedIn>
         </body>
       </html>
